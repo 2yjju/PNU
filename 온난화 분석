@@ -7,6 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons for Home icon -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body { font-family: 'Pretendard', sans-serif; background-color: #f8fafc; }
         .gradient-text {
@@ -16,9 +18,24 @@
         }
         .card { transition: transform 0.3s ease; }
         .card:hover { transform: translateY(-5px); }
+        .home-btn {
+            transition: all 0.2s ease;
+        }
+        .home-btn:hover {
+            background-color: #f1f5f9;
+            transform: scale(1.05);
+        }
     </style>
 </head>
-<body class="p-4 md:p-8">
+<body class="p-4 md:p-8 relative">
+    <!-- Home Button -->
+    <div class="max-w-4xl mx-auto mb-6">
+        <a href="index.html" class="home-btn inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-full shadow-sm text-gray-700 font-medium text-sm">
+            <i data-lucide="home" class="w-4 h-4"></i>
+            홈으로 이동
+        </a>
+    </div>
+
     <div class="max-w-4xl mx-auto">
         <!-- Header -->
         <header class="text-center mb-12">
@@ -91,6 +108,9 @@
     </div>
 
     <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
         const ctx = document.getElementById('warmingChart').getContext('2d');
         const warmingChart = new Chart(ctx, {
             type: 'line',
