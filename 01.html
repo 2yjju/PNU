@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터 분석 인포그래픽</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js for interactive charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; background-color: #f1f5f9; }
+        .card { transition: all 0.3s ease; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+    </style>
+</head>
+<body class="text-slate-900 pb-12">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 w-full bg-white/90 backdrop-blur-md border-b z-50">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 font-bold text-slate-800 hover:text-blue-600 transition">
+                <i data-lucide="home" class="w-5 h-5"></i>
+                <span>홈으로</span>
+            </a>
+            <div class="hidden md:block text-sm font-medium text-slate-500">지구 온난화 & 교통사고 통계 분석</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="gradient-bg text-white py-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
+                데이터로 보는 <span class="text-blue-400">환경</span>과 <span class="text-red-400">안전</span>
+            </h1>
+            <p class="text-slate-300 text-lg md:text-xl font-light">
+                최근 5년간의 데이터를 통해 변화하는 지구의 온도와 도로 위 안전 상태를 분석합니다.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 -mt-10">
+        
+        <!-- Section 1: Global Warming -->
+        <section class="mb-16">
+            <div class="bg-white rounded-3xl p-8 shadow-xl">
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="p-3 bg-orange-100 text-orange-600 rounded-2xl">
+                        <i data-lucide="thermometer"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold">지구 온난화 분석 (2020-2024)</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                    <div class="bg-orange-50 p-6 rounded-2xl border border-orange-100">
+                        <p class="text-sm font-semibold text-orange-600 mb-1">평균 기온 상승</p>
+                        <p class="text-3xl font-black text-slate-800">+1.3°C</p>
+                        <p class="text-xs text-orange-700 mt-2">5년 사이 급격한 변화</p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100">
+                        <p class="text-sm font-semibold text-blue-600 mb-1">CO2 농도 증가</p>
+                        <p class="text-3xl font-black text-slate-800">2.49%</p>
+                        <p class="text-xs text-blue-700 mt-2">지속적인 탄소 배출 누적</p>
+                    </div>
+                    <div class="bg-emerald-50 p-6 rounded-2xl border border-emerald-100">
+                        <p class="text-sm font-semibold text-emerald-600 mb-1">메탄 농도 증가</p>
+                        <p class="text-3xl font-black text-slate-800">2.54%</p>
+                        <p class="text-xs text-emerald-700 mt-2">강력한 온실효과 발생</p>
+                    </div>
+                </div>
+
+                <div class="h-[350px] w-full">
+                    <canvas id="warmingChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Traffic Accidents -->
+        <section>
+            <div class="bg-white rounded-3xl p-8 shadow-xl">
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="p-3 bg-red-100 text-red-600 rounded-2xl">
+                        <i data-lucide="alert-circle"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold">신호위반 교통사고 실태</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                            <span class="w-2 h-6 bg-red-500 rounded-full"></span>
+                            사망자 수의 불안한 반등
+                        </h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            사고 건수는 전반적으로 감소하고 있으나, 치사율과 직결되는 <b>사망자 수는 2024년 다시 증가(7.04%)</b>하며 위험 신호를 보내고 있습니다.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
+                                <span class="text-sm font-medium">2024년 신호위반 사고</span>
+                                <span class="font-bold">22,371건</span>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-red-50 rounded-xl text-red-700">
+                                <span class="text-sm font-medium">2024년 사망자 수</span>
+                                <span class="font-bold">213명</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-[300px]">
+                        <canvas id="trafficChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-16 text-center text-slate-400 text-sm">
+        <p>© 2026 데이터 분석 리포트. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // 1. Warming Chart
+        const warmingCtx = document.getElementById('warmingChart').getContext('2d');
+        new Chart(warmingCtx, {
+            type: 'line',
+            data: {
+                labels: ['2020', '2021', '2022', '2023', '2024'],
+                datasets: [{
+                    label: '평균 기온 (°C)',
+                    data: [13.4, 13.5, 13.6, 14.6, 14.7],
+                    borderColor: '#f97316',
+                    backgroundColor: 'rgba(249, 115, 22, 0.1)',
+                    borderWidth: 4,
+                    tension: 0.4,
+                    fill: true,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: false, grid: { color: '#f1f5f9' } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // 2. Traffic Accident Chart
+        const trafficCtx = document.getElementById('trafficChart').getContext('2d');
+        new Chart(trafficCtx, {
+            type: 'bar',
+            data: {
+                labels: ['2020', '2022', '2024'],
+                datasets: [{
+                    label: '사망자 수',
+                    data: [267, 232, 213],
+                    backgroundColor: ['#94a3b8', '#64748b', '#ef4444'],
+                    borderRadius: 12
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#f1f5f9' } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
