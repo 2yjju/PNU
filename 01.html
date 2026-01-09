@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>데이터 분석 인포그래픽</title>
+    <title>교통안전 분석 인포그래픽</title>
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Chart.js for interactive charts -->
@@ -12,10 +12,10 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Pretendard', sans-serif; background-color: #f1f5f9; }
+        body { font-family: 'Pretendard', sans-serif; background-color: #f8fafc; }
         .card { transition: all 0.3s ease; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
-        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .gradient-bg { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
     </style>
 </head>
 <body class="text-slate-900 pb-12">
@@ -27,121 +27,142 @@
                 <i data-lucide="home" class="w-5 h-5"></i>
                 <span>홈으로</span>
             </a>
-            <div class="hidden md:block text-sm font-medium text-slate-500">지구 온난화 & 교통사고 통계 분석</div>
+            <div class="hidden md:block text-sm font-medium text-slate-500">신호위반 교통사고 통계 분석 리포트</div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <header class="gradient-bg text-white py-20 px-6">
         <div class="max-w-4xl mx-auto text-center">
+            <span class="bg-red-600 text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">교통안전 기획보도</span>
             <h1 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
-                데이터로 보는 <span class="text-blue-400">환경</span>과 <span class="text-red-400">안전</span>
+                신호위반 사고, <span class="text-yellow-400">데이터</span>로 읽는<br>도로 위 위험 신호
             </h1>
             <p class="text-slate-300 text-lg md:text-xl font-light">
-                최근 5년간의 데이터를 통해 변화하는 지구의 온도와 도로 위 안전 상태를 분석합니다.
+                최근 5년간의 사고 추이를 통해 본 신호위반의 심각성과 대책을 분석합니다.
             </p>
         </div>
     </header>
 
     <main class="max-w-6xl mx-auto px-6 -mt-10">
         
-        <!-- Section 1: Global Warming -->
+        <!-- Summary Stats Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div class="card bg-white p-8 rounded-2xl border text-center shadow-sm">
+                <i data-lucide="alert-triangle" class="w-8 h-8 text-orange-500 mx-auto mb-4"></i>
+                <h3 class="text-slate-500 text-sm font-semibold mb-2">2024 사고 건수</h3>
+                <p class="text-4xl font-extrabold text-slate-900">22,371건</p>
+                <p class="text-green-600 text-sm mt-2 font-medium">▼ 5년 내 최저치 달성</p>
+            </div>
+            <div class="card bg-white p-8 rounded-2xl border border-red-100 text-center shadow-sm">
+                <i data-lucide="users" class="w-8 h-8 text-red-600 mx-auto mb-4"></i>
+                <h3 class="text-slate-500 text-sm font-semibold mb-2">2024 사망자 수</h3>
+                <p class="text-4xl font-extrabold text-red-600">213명</p>
+                <p class="text-red-600 text-sm mt-2 font-medium">▲ 전년 대비 7.04% 증가</p>
+            </div>
+            <div class="card bg-white p-8 rounded-2xl border text-center shadow-sm">
+                <i data-lucide="activity" class="w-8 h-8 text-blue-600 mx-auto mb-4"></i>
+                <h3 class="text-slate-500 text-sm font-semibold mb-2">전체 대비 비중</h3>
+                <p class="text-4xl font-extrabold text-slate-900">약 11%</p>
+                <p class="text-slate-400 text-sm mt-2 font-medium">높은 사고 위험성 지속</p>
+            </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            <!-- Accident Count Chart -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm border">
+                <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                    <i data-lucide="trending-down" class="text-blue-500"></i>
+                    연도별 사고 건수 추이
+                </h3>
+                <div class="h-[300px]">
+                    <canvas id="accidentsChart"></canvas>
+                </div>
+                <p class="mt-6 text-sm text-slate-500 leading-relaxed">
+                    2020년 이후 전반적인 감소세를 보이고 있으나, 2023년의 일시적 반등에서 보듯 운전자의 꾸준한 경각심 유지가 필수적입니다.
+                </p>
+            </div>
+
+            <!-- Victim Count Chart -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm border">
+                <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                    <i data-lucide="shield-alert" class="text-red-500"></i>
+                    사망자 및 부상자 분석
+                </h3>
+                <div class="h-[300px]">
+                    <canvas id="victimsChart"></canvas>
+                </div>
+                <p class="mt-6 text-sm text-slate-500 leading-relaxed">
+                    사고 건수는 줄고 있지만 2024년 사망자 수가 다시 반등한 것은 사고의 치사율이 높아지고 있음을 의미하는 위험한 신호입니다.
+                </p>
+            </div>
+        </div>
+
+        <!-- Deep Analysis Section -->
         <section class="mb-16">
-            <div class="bg-white rounded-3xl p-8 shadow-xl">
-                <div class="flex items-center gap-3 mb-8">
-                    <div class="p-3 bg-orange-100 text-orange-600 rounded-2xl">
-                        <i data-lucide="thermometer"></i>
-                    </div>
-                    <h2 class="text-2xl font-bold">지구 온난화 분석 (2020-2024)</h2>
+            <h2 class="text-2xl font-bold mb-8 text-center">심층 분석 및 대책 제안</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-blue-50 p-8 rounded-2xl border-l-4 border-blue-500">
+                    <h4 class="font-bold text-blue-900 mb-3 flex items-center gap-2">
+                        <i data-lucide="scale" class="w-5 h-5"></i>
+                        법률 및 제도 개선
+                    </h4>
+                    <ul class="text-sm text-blue-800 space-y-2 list-disc list-inside">
+                        <li>신호위반 시 벌점 및 과태료 대폭 상향</li>
+                        <li>어린이·노인 보호구역 내 가중처벌 강화</li>
+                        <li>습관적 위반자에 대한 교육 이수 의무화</li>
+                    </ul>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-                    <div class="bg-orange-50 p-6 rounded-2xl border border-orange-100">
-                        <p class="text-sm font-semibold text-orange-600 mb-1">평균 기온 상승</p>
-                        <p class="text-3xl font-black text-slate-800">+1.3°C</p>
-                        <p class="text-xs text-orange-700 mt-2">5년 사이 급격한 변화</p>
-                    </div>
-                    <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100">
-                        <p class="text-sm font-semibold text-blue-600 mb-1">CO2 농도 증가</p>
-                        <p class="text-3xl font-black text-slate-800">2.49%</p>
-                        <p class="text-xs text-blue-700 mt-2">지속적인 탄소 배출 누적</p>
-                    </div>
-                    <div class="bg-emerald-50 p-6 rounded-2xl border border-emerald-100">
-                        <p class="text-sm font-semibold text-emerald-600 mb-1">메탄 농도 증가</p>
-                        <p class="text-3xl font-black text-slate-800">2.54%</p>
-                        <p class="text-xs text-emerald-700 mt-2">강력한 온실효과 발생</p>
-                    </div>
-                </div>
-
-                <div class="h-[350px] w-full">
-                    <canvas id="warmingChart"></canvas>
+                <div class="bg-emerald-50 p-8 rounded-2xl border-l-4 border-emerald-500">
+                    <h4 class="font-bold text-emerald-900 mb-3 flex items-center gap-2">
+                        <i data-lucide="cpu" class="w-5 h-5"></i>
+                        기술적 단속 강화
+                    </h4>
+                    <ul class="text-sm text-emerald-800 space-y-2 list-disc list-inside">
+                        <li>AI 기반의 스마트 무인 단속 장비 보급</li>
+                        <li>사고 다발 지점 신호 체계 지능화 개선</li>
+                        <li>단속 카메라 설치 지점의 전략적 확대</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Section 2: Traffic Accidents -->
-        <section>
-            <div class="bg-white rounded-3xl p-8 shadow-xl">
-                <div class="flex items-center gap-3 mb-8">
-                    <div class="p-3 bg-red-100 text-red-600 rounded-2xl">
-                        <i data-lucide="alert-circle"></i>
-                    </div>
-                    <h2 class="text-2xl font-bold">신호위반 교통사고 실태</h2>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                    <div>
-                        <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
-                            <span class="w-2 h-6 bg-red-500 rounded-full"></span>
-                            사망자 수의 불안한 반등
-                        </h3>
-                        <p class="text-slate-600 mb-6 leading-relaxed">
-                            사고 건수는 전반적으로 감소하고 있으나, 치사율과 직결되는 <b>사망자 수는 2024년 다시 증가(7.04%)</b>하며 위험 신호를 보내고 있습니다.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex items-center justify-between p-4 bg-slate-50 rounded-xl">
-                                <span class="text-sm font-medium">2024년 신호위반 사고</span>
-                                <span class="font-bold">22,371건</span>
-                            </div>
-                            <div class="flex items-center justify-between p-4 bg-red-50 rounded-xl text-red-700">
-                                <span class="text-sm font-medium">2024년 사망자 수</span>
-                                <span class="font-bold">213명</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h-[300px]">
-                        <canvas id="trafficChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Final Message -->
+        <div class="bg-slate-900 text-white p-10 rounded-3xl text-center">
+            <h2 class="text-2xl font-bold mb-4">도로 위의 안전, 신호 준수가 시작입니다.</h2>
+            <p class="text-slate-400 font-light max-w-2xl mx-auto">
+                데이터가 보여주는 위험은 우리의 행동으로 바꿀 수 있습니다. 한 순간의 서두름보다 생명의 소중함을 먼저 생각하는 교통 문화를 함께 만들어가요.
+            </p>
+        </div>
     </main>
 
     <footer class="mt-16 text-center text-slate-400 text-sm">
-        <p>© 2026 데이터 분석 리포트. All rights reserved.</p>
+        <p>통계 출처: 최근 5년간 국내 교통사고 분석 데이터 (2020-2024)</p>
+        <p class="mt-1">© 2026 교통안전 데이터 리포트. All rights reserved.</p>
     </footer>
 
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // 1. Warming Chart
-        const warmingCtx = document.getElementById('warmingChart').getContext('2d');
-        new Chart(warmingCtx, {
+        // 1. Accident Count Chart
+        const accidentsCtx = document.getElementById('accidentsChart').getContext('2d');
+        new Chart(accidentsCtx, {
             type: 'line',
             data: {
                 labels: ['2020', '2021', '2022', '2023', '2024'],
                 datasets: [{
-                    label: '평균 기온 (°C)',
-                    data: [13.4, 13.5, 13.6, 14.6, 14.7],
-                    borderColor: '#f97316',
-                    backgroundColor: 'rgba(249, 115, 22, 0.1)',
+                    label: '사고 건수',
+                    data: [24512, 24608, 22850, 23444, 22371],
+                    borderColor: '#3b82f6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
                     borderWidth: 4,
-                    tension: 0.4,
+                    tension: 0.3,
                     fill: true,
-                    pointRadius: 6,
+                    pointRadius: 5,
                     pointBackgroundColor: '#fff',
-                    pointBorderWidth: 3
+                    pointBorderWidth: 2
                 }]
             },
             options: {
@@ -155,23 +176,33 @@
             }
         });
 
-        // 2. Traffic Accident Chart
-        const trafficCtx = document.getElementById('trafficChart').getContext('2d');
-        new Chart(trafficCtx, {
+        // 2. Victim Chart
+        const victimsCtx = document.getElementById('victimsChart').getContext('2d');
+        new Chart(victimsCtx, {
             type: 'bar',
             data: {
                 labels: ['2020', '2022', '2024'],
-                datasets: [{
-                    label: '사망자 수',
-                    data: [267, 232, 213],
-                    backgroundColor: ['#94a3b8', '#64748b', '#ef4444'],
-                    borderRadius: 12
-                }]
+                datasets: [
+                    {
+                        label: '사망자 수',
+                        data: [267, 232, 213],
+                        backgroundColor: '#ef4444',
+                        borderRadius: 8
+                    },
+                    {
+                        label: '부상자 (단위: 100명)',
+                        data: [386, 352, 339],
+                        backgroundColor: '#94a3b8',
+                        borderRadius: 8
+                    }
+                ]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
+                plugins: {
+                    legend: { position: 'top', labels: { boxWidth: 10, font: { size: 11 } } }
+                },
                 scales: {
                     y: { beginAtZero: true, grid: { color: '#f1f5f9' } },
                     x: { grid: { display: false } }
