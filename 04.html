@@ -51,7 +51,7 @@
 
         .logo {
             color: var(--white);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
             font-family: 'Poppins', sans-serif;
         }
@@ -62,13 +62,13 @@
         }
 
         .nav-links li {
-            margin-left: 30px;
+            margin-left: 25px;
         }
 
         .nav-links a {
             color: var(--white);
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 500;
             transition: 0.3s;
         }
@@ -78,9 +78,9 @@
         }
 
         /* Hero Section */
-        #home {
+        #top {
             height: 60vh;
-            background: linear-gradient(rgba(0,51,102,0.8), rgba(0,51,102,0.8)), url('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&q=80&w=1280') center/cover;
+            background: linear-gradient(rgba(0,51,102,0.85), rgba(0,51,102,0.85)), url('https://images.unsplash.com/photo-1579165466541-71822477054b?auto=format&fit=crop&q=80&w=1280') center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -91,32 +91,32 @@
             margin-top: 70px;
         }
 
-        #home h1 {
-            font-size: 3rem;
+        #top h1 {
+            font-size: 2.8rem;
             margin-bottom: 20px;
             letter-spacing: -1px;
         }
 
-        #home p {
-            font-size: 1.2rem;
+        #top p {
+            font-size: 1.1rem;
             max-width: 800px;
             opacity: 0.9;
         }
 
         /* Section Commons */
         section {
-            padding: 100px 10% 60px;
+            padding: 80px 10% 40px;
             max-width: 1400px;
             margin: 0 auto;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .section-header h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--primary-color);
             margin-bottom: 10px;
             position: relative;
@@ -125,59 +125,59 @@
 
         .section-header h2::after {
             content: '';
-            width: 50%;
+            width: 40px;
             height: 4px;
             background: var(--secondary-color);
             position: absolute;
             bottom: -10px;
-            left: 25%;
+            left: calc(50% - 20px);
         }
 
         /* Layout Grids */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         .card {
             background: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
             text-align: center;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
         .card i {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
             margin-bottom: 15px;
         }
 
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
         .highlight {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: var(--primary-color);
             display: block;
-            margin-top: 10px;
+            margin-top: 5px;
         }
 
         /* Charts & Interaction */
         .interactive-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
             align-items: center;
         }
 
@@ -186,20 +186,21 @@
         }
 
         .bar-item {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .bar-label {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             font-weight: 500;
+            font-size: 0.9rem;
         }
 
         .bar-bg {
             background: #e0e0e0;
-            height: 12px;
-            border-radius: 6px;
+            height: 10px;
+            border-radius: 5px;
             overflow: hidden;
         }
 
@@ -207,16 +208,16 @@
             height: 100%;
             background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
             width: 0;
-            transition: width 1.5s ease-in-out;
+            transition: width 1.5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
         }
 
         /* Table */
         .table-wrapper {
             overflow-x: auto;
             background: var(--white);
-            border-radius: 15px;
+            border-radius: 12px;
             padding: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         table {
@@ -226,66 +227,87 @@
         }
 
         th {
-            background: var(--primary-color);
-            color: var(--white);
+            background: #f8f9fa;
+            color: var(--primary-color);
             padding: 15px;
             text-align: left;
+            border-bottom: 2px solid #eee;
         }
 
         td {
             padding: 15px;
             border-bottom: 1px solid #eee;
+            font-size: 0.95rem;
         }
 
         tr:hover {
-            background: #f9f9f9;
+            background: #fcfcfc;
         }
 
         .search-box {
             margin-bottom: 20px;
             width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
             font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
         }
 
-        /* Home Button (Floating) */
-        .home-btn {
+        .search-box:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 8px rgba(0,168,232,0.2);
+        }
+
+        /* Home Button (External Link) */
+        .external-home-btn {
             position: fixed;
             bottom: 30px;
             right: 30px;
             width: 60px;
             height: 60px;
-            background: var(--primary-color);
+            background: var(--secondary-color);
             color: var(--white);
             border-radius: 50%;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
             z-index: 1000;
-            transition: 0.3s;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .home-btn:hover {
-            background: var(--secondary-color);
-            transform: scale(1.1);
+        .external-home-btn i {
+            font-size: 1.2rem;
+            margin-bottom: 2px;
+        }
+
+        .external-home-btn span {
+            font-size: 0.65rem;
+            font-weight: 700;
+        }
+
+        .external-home-btn:hover {
+            background: var(--primary-color);
+            transform: scale(1.15) rotate(5deg);
         }
 
         /* Footer */
         footer {
             background: #111;
-            color: #777;
-            padding: 50px 0;
+            color: #888;
+            padding: 40px 0;
             text-align: center;
+            font-size: 0.9rem;
         }
 
-        /* Animation */
+        /* Animation Classes */
         .fade-in {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(25px);
             transition: 0.8s ease-out;
         }
 
@@ -298,6 +320,8 @@
             .interactive-container {
                 grid-template-columns: 1fr;
             }
+            #top h1 { font-size: 2.2rem; }
+            section { padding: 60px 5% 30px; }
         }
     </style>
 </head>
@@ -306,76 +330,83 @@
     <nav>
         <div class="logo">PHARMA STATS 2025</div>
         <ul class="nav-links">
-            <li><a href="#home">홈</a></li>
+            <!-- 네비게이션 홈 버튼도 외부 링크로 설정 -->
+            <li><a href="https://github.com/2yjju/PNU" target="_blank"><i class="fas fa-external-link-alt"></i> GitHub Home</a></li>
             <li><a href="#competition">경쟁률</a></li>
             <li><a href="#employment">취업률</a></li>
             <li><a href="#tuition">등록금</a></li>
         </ul>
     </nav>
 
-    <section id="home">
+    <section id="top">
         <h1 class="fade-in">2025 약학대학 지표 분석 보고서</h1>
-        <p class="fade-in">전국 주요 약학대학(학부)의 입시 경쟁률, 취업 성공률, 그리고 등록금 현황을 한눈에 분석하고 비교해 보세요. 본 데이터는 학부 과정만을 필터링한 최신 정보입니다.</p>
+        <p class="fade-in">전국 주요 약학대학(학부)의 데이터를 바탕으로 입시 경쟁률, 취업 성공률, 등록금 현황을 비교 분석합니다. 아래로 스크롤하여 상세 지표를 확인하세요.</p>
     </section>
 
     <!-- 경쟁률 섹션 -->
     <section id="competition">
         <div class="section-header fade-in">
             <h2>신입생 경쟁률</h2>
-            <p>전국에서 가장 뜨거운 입시 열기, 어떤 대학이 가장 높을까요?</p>
+            <p>2025학년도 약학부 입시의 치열한 경쟁 현황입니다.</p>
         </div>
 
         <div class="interactive-container">
             <div class="bar-chart fade-in">
                 <div class="bar-item">
                     <div class="bar-label"><span>가톨릭대학교</span> <span>69.2:1</span></div>
-                    <div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div>
+                    <div class="bar-bg"><div class="bar-fill" data-width="100%"></div></div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label"><span>고려대학교(세종)</span> <span>62.3:1</span></div>
-                    <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
+                    <div class="bar-bg"><div class="bar-fill" data-width="90%"></div></div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label"><span>가천대학교</span> <span>44.1:1</span></div>
-                    <div class="bar-bg"><div class="bar-fill" style="width: 64%;"></div></div>
+                    <div class="bar-bg"><div class="bar-fill" data-width="64%"></div></div>
                 </div>
                 <div class="bar-item">
                     <div class="bar-label"><span>충북대학교</span> <span>45.1:1</span></div>
-                    <div class="bar-bg"><div class="bar-fill" style="width: 65%;"></div></div>
+                    <div class="bar-bg"><div class="bar-fill" data-width="65%"></div></div>
+                </div>
+                <div class="bar-item">
+                    <div class="bar-label"><span>경성대학교</span> <span>36.5:1</span></div>
+                    <div class="bar-bg"><div class="bar-fill" data-width="53%"></div></div>
                 </div>
             </div>
             <div class="text-info fade-in">
-                <h3>수도권 집중 현상</h3>
-                <p>가톨릭대학교가 69.2:1로 전국 1위를 기록했습니다. 상위권 약대 모두 평균 40:1을 상회하는 높은 경쟁률을 보이며, 전문직 선호 사상이 입시에 강하게 반영되고 있습니다.</p>
+                <h3 style="margin-bottom: 15px; color: var(--primary-color);">입시 집중 분석</h3>
+                <p style="color: var(--text-gray);">가톨릭대학교가 약 70:1에 육박하는 경쟁률로 전국 최고치를 기록했습니다. 상위권 대학들의 경쟁률이 상향 평준화되는 추세이며, 서울 및 수도권 대학으로의 쏠림 현상이 여전히 강력하게 나타나고 있습니다.</p>
             </div>
         </div>
     </section>
 
     <!-- 취업률 섹션 -->
-    <section id="employment" style="background: #eceff1;">
-        <div class="section-header fade-in">
-            <h2>취업률 지표</h2>
-            <p>졸업은 곧 취업! 면허 기반 전문직의 강력한 안정성</p>
-        </div>
+    <section id="employment" style="background: #f1f4f6; max-width: none;">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div class="section-header fade-in">
+                <h2>취업률 지표</h2>
+                <p>졸업 후 안정적인 진로 확보를 보여주는 핵심 지표입니다.</p>
+            </div>
 
-        <div class="card-grid">
-            <div class="card fade-in">
-                <i class="fa-solid fa-trophy"></i>
-                <h3>취업률 100%</h3>
-                <p>가톨릭대학교, 계명대학교 외 다수</p>
-                <span class="highlight">100%</span>
-            </div>
-            <div class="card fade-in">
-                <i class="fa-solid fa-university"></i>
-                <h3>거점 국립대 평균</h3>
-                <p>강원대(97.8%), 경북대(92.9%) 등</p>
-                <span class="highlight">95.4%</span>
-            </div>
-            <div class="card fade-in">
-                <i class="fa-solid fa-chart-line"></i>
-                <h3>전체 평균 취업률</h3>
-                <p>학과 특성상 최상위 유지</p>
-                <span class="highlight">92.0%</span>
+            <div class="card-grid">
+                <div class="card fade-in">
+                    <i class="fa-solid fa-star"></i>
+                    <h3>최고 취업률</h3>
+                    <p>가톨릭대, 계명대, 순천대 등</p>
+                    <span class="highlight">100%</span>
+                </div>
+                <div class="card fade-in">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <h3>거점 국립대</h3>
+                    <p>강원대, 경북대, 경상국립대 평균</p>
+                    <span class="highlight">95.4%</span>
+                </div>
+                <div class="card fade-in">
+                    <i class="fa-solid fa-user-doctor"></i>
+                    <h3>면허 안정성</h3>
+                    <p>학부 졸업생 평균 취업 성공률</p>
+                    <span class="highlight">92.0%</span>
+                </div>
             </div>
         </div>
     </section>
@@ -383,11 +414,11 @@
     <!-- 등록금 섹션 -->
     <section id="tuition">
         <div class="section-header fade-in">
-            <h2>평균 등록금 현황</h2>
-            <p>국립 vs 사립, 6년제 학비 부담은 얼마나 차이 날까요?</p>
+            <h2>평균 등록금 비교</h2>
+            <p>설립 유형에 따른 연간 학비 부담을 확인하세요.</p>
         </div>
 
-        <input type="text" id="tableSearch" class="search-box fade-in" placeholder="대학교 이름을 검색해 보세요...">
+        <input type="text" id="tableSearch" class="search-box fade-in" placeholder="대학교 이름을 입력하여 검색하세요 (예: 경성대, 가천대...)">
         
         <div class="table-wrapper fade-in">
             <table id="univTable">
@@ -401,36 +432,40 @@
                 </thead>
                 <tbody>
                     <tr><td>가천대학교</td><td>사립</td><td>11,292,200원</td><td>인천</td></tr>
-                    <tr><td>경성대학교</td><td>사립</td><td>10,108,950원</td><td>부산</td></tr>
                     <tr><td>중앙대학교</td><td>사립</td><td>10,980,000원</td><td>서울</td></tr>
+                    <tr><td>경성대학교</td><td>사립</td><td>10,108,950원</td><td>부산</td></tr>
                     <tr><td>가톨릭대학교</td><td>사립</td><td>9,086,000원</td><td>경기</td></tr>
                     <tr><td>경북대학교</td><td>국립</td><td>6,385,000원</td><td>대구</td></tr>
                     <tr><td>강원대학교</td><td>국립</td><td>6,132,000원</td><td>강원</td></tr>
+                    <tr><td>경상국립대학교</td><td>국립</td><td>6,450,000원</td><td>경남</td></tr>
                     <tr><td>충북대학교</td><td>국립</td><td>6,070,000원</td><td>충북</td></tr>
                 </tbody>
             </table>
         </div>
-        <div style="margin-top: 30px; text-align: center;" class="fade-in">
-            <p><strong>분석 결과:</strong> 국립대 약대는 사립대의 약 60% 수준의 등록금을 유지하고 있어 경제적 메리트가 매우 큽니다.</p>
+        <div style="margin-top: 30px; text-align: center; color: var(--text-gray);" class="fade-in">
+            <p><i class="fa-solid fa-circle-info"></i> 국립대학교 약대는 사립대학교 대비 약 <strong>40~45%</strong> 저렴한 등록금 수준을 보입니다.</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 약학대학 지표 분석 센터. All rights reserved.</p>
+        <p>&copy; 2025 Pharmacy Education Analysis Center. 모든 데이터는 제공된 지표를 기반으로 작성되었습니다.</p>
     </footer>
 
-    <!-- Floating Home Button -->
-    <a href="#home" class="home-btn"><i class="fa-solid fa-arrow-up"></i></a>
+    <!-- Floating External Home Button -->
+    <a href="https://github.com/2yjju/PNU" target="_blank" class="external-home-btn" title="GitHub로 이동">
+        <i class="fa-solid fa-home"></i>
+        <span>GITHUB</span>
+    </a>
 
     <script>
-        // 테이블 검색 기능
+        // 테이블 검색 필터 기능
         document.getElementById('tableSearch').addEventListener('keyup', function() {
             let filter = this.value.toUpperCase();
             let rows = document.querySelector("#univTable tbody").rows;
             
             for (let i = 0; i < rows.length; i++) {
-                let col1 = rows[i].cells[0].textContent.toUpperCase();
-                if (col1.indexOf(filter) > -1) {
+                let univName = rows[i].cells[0].textContent.toUpperCase();
+                if (univName.indexOf(filter) > -1) {
                     rows[i].style.display = "";
                 } else {
                     rows[i].style.display = "none";
@@ -438,24 +473,40 @@
             }
         });
 
-        // 스크롤 애니메이션 (Fade-in 효과)
+        // Intersection Observer를 이용한 스크롤 애니메이션
         const faders = document.querySelectorAll('.fade-in');
+        const barFills = document.querySelectorAll('.bar-fill');
+
         const appearOptions = {
-            threshold: 0.1,
+            threshold: 0.15,
             rootMargin: "0px 0px -50px 0px"
         };
 
-        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+        const observer = new IntersectionObserver(function(entries, observer) {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) return;
-                entry.target.classList.add('appear');
-                appearOnScroll.unobserve(entry.target);
+                
+                // 텍스트 및 카드 페이드인
+                if (entry.target.classList.contains('fade-in')) {
+                    entry.target.classList.add('appear');
+                }
+                
+                // 막대 그래프 애니메이션
+                const fills = entry.target.querySelectorAll('.bar-fill');
+                fills.forEach(fill => {
+                    fill.style.width = fill.getAttribute('data-width');
+                });
+
+                observer.unobserve(entry.target);
             });
         }, appearOptions);
 
         faders.forEach(fader => {
-            appearOnScroll.observe(fader);
+            observer.observe(fader);
         });
+
+        // 경쟁률 섹션이 나타날 때 그래프 애니메이션 동시 트리거를 위해 섹션 자체 관찰
+        observer.observe(document.getElementById('competition'));
     </script>
 </body>
 </html>
