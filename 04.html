@@ -260,7 +260,7 @@
             box-shadow: 0 0 8px rgba(0,168,232,0.2);
         }
 
-        /* Home Button (External Link) */
+        /* External Home Button (Update: New URL) */
         .external-home-btn {
             position: fixed;
             bottom: 30px;
@@ -286,7 +286,7 @@
         }
 
         .external-home-btn span {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             font-weight: 700;
         }
 
@@ -330,8 +330,8 @@
     <nav>
         <div class="logo">PHARMA STATS 2025</div>
         <ul class="nav-links">
-            <!-- 네비게이션 홈 버튼도 외부 링크로 설정 -->
-            <li><a href="https://github.com/2yjju/PNU" target="_blank"><i class="fas fa-external-link-alt"></i> GitHub Home</a></li>
+            <!-- 네비게이션 홈 버튼: 새로운 주소로 연결 -->
+            <li><a href="https://2yjju.github.io/PNU/index.html" target="_blank"><i class="fas fa-home"></i> PNU Home</a></li>
             <li><a href="#competition">경쟁률</a></li>
             <li><a href="#employment">취업률</a></li>
             <li><a href="#tuition">등록금</a></li>
@@ -392,13 +392,13 @@
                 <div class="card fade-in">
                     <i class="fa-solid fa-star"></i>
                     <h3>최고 취업률</h3>
-                    <p>가톨릭대, 계명대, 순천대 등</p>
+                    <p>가톨릭대학교 등 주요 우수 대학</p>
                     <span class="highlight">100%</span>
                 </div>
                 <div class="card fade-in">
                     <i class="fa-solid fa-building-columns"></i>
                     <h3>거점 국립대</h3>
-                    <p>강원대, 경북대, 경상국립대 평균</p>
+                    <p>강원대학교, 경북대학교 평균</p>
                     <span class="highlight">95.4%</span>
                 </div>
                 <div class="card fade-in">
@@ -437,7 +437,6 @@
                     <tr><td>가톨릭대학교</td><td>사립</td><td>9,086,000원</td><td>경기</td></tr>
                     <tr><td>경북대학교</td><td>국립</td><td>6,385,000원</td><td>대구</td></tr>
                     <tr><td>강원대학교</td><td>국립</td><td>6,132,000원</td><td>강원</td></tr>
-                    <tr><td>경상국립대학교</td><td>국립</td><td>6,450,000원</td><td>경남</td></tr>
                     <tr><td>충북대학교</td><td>국립</td><td>6,070,000원</td><td>충북</td></tr>
                 </tbody>
             </table>
@@ -451,10 +450,10 @@
         <p>&copy; 2025 Pharmacy Education Analysis Center. 모든 데이터는 제공된 지표를 기반으로 작성되었습니다.</p>
     </footer>
 
-    <!-- Floating External Home Button -->
-    <a href="https://github.com/2yjju/PNU" target="_blank" class="external-home-btn" title="GitHub로 이동">
+    <!-- Floating External Home Button (Update: New URL) -->
+    <a href="https://2yjju.github.io/PNU/index.html" target="_blank" class="external-home-btn" title="PNU 홈으로 이동">
         <i class="fa-solid fa-home"></i>
-        <span>GITHUB</span>
+        <span>PNU</span>
     </a>
 
     <script>
@@ -505,8 +504,9 @@
             observer.observe(fader);
         });
 
-        // 경쟁률 섹션이 나타날 때 그래프 애니메이션 동시 트리거를 위해 섹션 자체 관찰
-        observer.observe(document.getElementById('competition'));
+        // 경쟁률 섹션 관찰
+        const competitionSection = document.getElementById('competition');
+        if (competitionSection) observer.observe(competitionSection);
     </script>
 </body>
 </html>
