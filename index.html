@@ -37,7 +37,7 @@
             color: #ffffff !important;
         }
 
-        /* [요청사항] My Projects 제목을 다크모드에서도 검은색으로 고정 */
+        /* My Projects 제목을 다크모드에서도 검은색으로 고정 */
         .dark .project-title {
             color: #000000 !important;
         }
@@ -134,7 +134,6 @@
     <!-- Projects Section -->
     <section id="projects" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div class="mb-16">
-            <!-- project-title 클래스를 추가하여 다크모드에서도 검은색으로 고정 -->
             <h3 class="text-3xl font-bold mb-2 text-slate-800 dark:text-black project-title">My Projects</h3>
             <div class="h-1.5 w-20 bg-blue-500 rounded-full"></div>
         </div>
@@ -192,14 +191,26 @@
                 </div>
             </a>
 
-            <!-- Project 05: AI 윤리 유튜브 분석 -->
-            <a href="05.html" class="glass-card rounded-2xl p-8 border-t-4 border-blue-500 flex flex-col h-full group relative overflow-hidden shadow-sm">
-                <div class="absolute top-4 right-4 bg-blue-600 text-white text-[10px] px-2 py-1 rounded-full font-bold">TEAM</div>
+            <!-- Project 05: 유튜브 댓글 분석 (TEAM 태그 제거) -->
+            <a href="05.html" class="glass-card rounded-2xl p-8 flex flex-col h-full group shadow-sm">
                 <div class="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-6 text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors">
                     <i class="fab fa-youtube text-2xl"></i>
                 </div>
-                <h4 class="text-xl font-bold mb-3">AI 윤리 유튜브 콘텐츠 분석</h4>
-                <p class="mb-6 flex-grow leading-relaxed">유튜브 데이터를 크롤링하여 AI 윤리에 대한 대중의 관심도와 담론 형성 과정을 텍스트 마이닝 기법으로 분석합니다.</p>
+                <h4 class="text-xl font-bold mb-3">유튜브 댓글 분석</h4>
+                <p class="mb-6 flex-grow leading-relaxed">유튜브 데이터를 크롤링하여 대중의 반응과 여론 형성 과정을 텍스트 마이닝 기법으로 분석합니다.</p>
+                <div class="flex items-center text-blue-600 dark:text-blue-400 font-semibold">
+                    자세히 보기 <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                </div>
+            </a>
+
+            <!-- Project 06: AI 윤리 콘텐츠 분석 (TEAM 태그 및 보더 추가) -->
+            <a href="06.html" class="glass-card rounded-2xl p-8 border-t-4 border-blue-500 flex flex-col h-full group relative overflow-hidden shadow-sm">
+                <div class="absolute top-4 right-4 bg-blue-600 text-white text-[10px] px-2 py-1 rounded-full font-bold">TEAM</div>
+                <div class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mb-6 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                    <i class="fas fa-brain text-2xl"></i>
+                </div>
+                <h4 class="text-xl font-bold mb-3">AI 윤리 콘텐츠 분석</h4>
+                <p class="mb-6 flex-grow leading-relaxed">인공지능 윤리에 관한 다양한 콘텐츠를 분석하여 올바른 기술 활용 가이드라인과 윤리적 가치를 탐구합니다.</p>
                 <div class="flex items-center text-blue-600 dark:text-blue-400 font-semibold">
                     자세히 보기 <i class="fas fa-arrow-right ml-2 text-sm"></i>
                 </div>
