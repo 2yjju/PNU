@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-POP Demon Hunters 심층 분석 보고서</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; scroll-behavior: smooth; }
+        .gradient-bg { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
+        .card-hover:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .nav-link:hover { color: #4facfe; }
+        .custom-shadow { box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3); }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <!-- 홈 버튼 추가 -->
+                <a href="https://2yjju.github.io/PNU/" class="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-all text-white" title="홈으로 이동">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                </a>
+                <h1 class="text-xl font-black tracking-tighter text-blue-400">K-DEMON REPORT</h1>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#intro" class="nav-link transition">서론</a>
+                <a href="#success" class="nav-link transition">성공요인</a>
+                <a href="#impact" class="nav-link transition">파급효과</a>
+                <a href="#paradigm" class="nav-link transition">패러다임</a>
+                <a href="#conclusion" class="nav-link transition">결론</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="intro" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            <!-- 배경 이미지 플레이스홀더 -->
+            <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1619983081563-430f63602796?auto=format&fit=crop&q=80')] bg-cover bg-center"></div>
+        </div>
+        <div class="relative z-10 text-center px-4 max-w-4xl">
+            <span class="inline-block px-4 py-1 rounded-full bg-blue-600 text-xs font-bold mb-4 uppercase tracking-widest">Global Syndrome</span>
+            <h2 class="text-4xl md:text-6xl font-black mb-6 leading-tight">케이팝 데몬 헌터스:<br><span class="text-blue-400">K-콘텐츠의 새로운 패러다임</span></h2>
+            <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-10">
+                넷플릭스 40개국 1위, 빌보드 점령. 단순한 인기를 넘어 글로벌 문화 현상이 된 '캐데헌' 신드롬을 심층 분석합니다.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#success" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-bold transition duration-300">성공 요인 분석 보기</a>
+                <a href="#impact" class="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-lg font-bold backdrop-blur-md transition duration-300">파급 효과 확인</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. 성공 요인 분석 -->
+    <section id="success" class="py-24 px-6 bg-gray-800/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-bold mb-4">글로벌 흥행의 해부</h3>
+                <div class="h-1 w-20 bg-blue-500 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
+                <div>
+                    <h4 class="text-2xl font-bold mb-6 flex items-center">
+                        <span class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-sm mr-3">01</span>
+                        가상 아티스트, 차트를 점령하다
+                    </h4>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        가상 걸그룹 '헌트릭스(Huntrix)'의 'Golden'은 빌보드 글로벌 200 차트 1위를 기록했습니다. 이는 데이터 기반의 인기를 가장 직접적으로 보여주는 지표입니다.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-2">✔</span>
+                            <span><b>빌보드 글로벌 200:</b> 가상 아티스트 최초 1위</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-2">✔</span>
+                            <span><b>빌보드 핫 100:</b> 6위 진입 기염</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-2">✔</span>
+                            <span><b>OST 앨범:</b> '빌보드 200' 2위 (겨울왕국 이후 최고)</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="glass p-6 rounded-2xl custom-shadow">
+                    <canvas id="billboardChart"></canvas>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 문화 요소 카드 1 -->
+                <div class="glass p-8 rounded-2xl card-hover">
+                    <div class="text-4xl mb-4">🐯</div>
+                    <h5 class="text-xl font-bold mb-3">호작도 (까치호랑이)</h5>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        민화 속 익살스러운 호랑이를 매력적인 동료로 재탄생시켜 전 세계인에게 친근하게 다가갔습니다.
+                    </p>
+                </div>
+                <!-- 문화 요소 카드 2 -->
+                <div class="glass p-8 rounded-2xl card-hover">
+                    <div class="text-4xl mb-4">⚔️</div>
+                    <h5 class="text-xl font-bold mb-3">전통 무기 및 신화</h5>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        사인검, 도깨비, 저승사자 등 한국 고유의 신비로운 요소들을 현대적 판타지 세계관으로 녹여냈습니다.
+                    </p>
+                </div>
+                <!-- 문화 요소 카드 3 -->
+                <div class="glass p-8 rounded-2xl card-hover">
+                    <div class="text-4xl mb-4">🍱</div>
+                    <h5 class="text-xl font-bold mb-3">K-Lifestyle</h5>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        컵라면, 김밥, 식당 수저 세팅 등 소소하지만 진정성 있는 디테일이 작품의 깊이를 더했습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 파급 효과 -->
+    <section id="impact" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+                <div>
+                    <h3 class="text-3xl font-bold mb-2">스크린 너머의 파급 효과</h3>
+                    <p class="text-gray-400">실물 경제와 문화 전반에 미치는 '캐데헌 이코노미'</p>
+                </div>
+                <div class="text-right">
+                    <span class="text-5xl font-black text-blue-500">2,700,000+</span>
+                    <p class="text-xs text-gray-500 uppercase tracking-widest">상반기 국립중앙박물관 관람객 수</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-blue-600 to-blue-800 p-8 rounded-2xl shadow-xl">
+                    <h4 class="text-xl font-bold mb-4">박물관 굿즈 대란</h4>
+                    <p class="text-blue-100 text-sm mb-6">
+                        '까치 호랑이' 배지 4차 완판. 박물관 온라인 사이트 일 평균 트래픽 26만 명 돌파 및 최대 50만 명 접속.
+                    </p>
+                    <div class="w-full h-32 bg-white/10 rounded-lg flex items-center justify-center text-xs">
+                        [국립중앙박물관 굿즈 품절 안내문 이미지]
+                    </div>
+                </div>
+
+                <div class="glass p-8 rounded-2xl border-l-4 border-blue-500">
+                    <h4 class="text-xl font-bold mb-4">산업계 콜라보레이션</h4>
+                    <p class="text-gray-400 text-sm mb-4">
+                        삼성 갤럭시 카메라 렌즈와 캐릭터를 연결한 마케팅 등 기업들의 발빠른 협업 진행.
+                    </p>
+                    <div class="flex space-x-2">
+                        <span class="px-2 py-1 bg-gray-700 rounded text-xs">#Samsung</span>
+                        <span class="px-2 py-1 bg-gray-700 rounded text-xs">#Galaxy</span>
+                        <span class="px-2 py-1 bg-gray-700 rounded text-xs">#Chaeunwoo</span>
+                    </div>
+                </div>
+
+                <div class="glass p-8 rounded-2xl border-l-4 border-purple-500">
+                    <h4 class="text-xl font-bold mb-4">글로벌 미디어 극찬</h4>
+                    <blockquote class="text-gray-300 italic text-sm mb-4">
+                        "올해 넷플릭스가 공개한 영화 중 최고" - 로튼 토마토
+                    </blockquote>
+                    <p class="text-gray-500 text-xs">뉴욕 타임스 오스카 후보 가능성 예측</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 글로벌 제작 시스템의 명과 암 -->
+    <section id="paradigm" class="py-24 px-6 bg-white text-gray-900">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-bold mb-4">글로벌 제작 시스템의 고찰</h3>
+                <p class="text-gray-600 font-medium">소니 제작, 넷플릭스 배급 - 한국 문화의 역설적 성공</p>
+            </div>
+
+            <div class="space-y-12">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="flex-1 p-6 bg-blue-50 rounded-xl border border-blue-100">
+                        <h5 class="font-bold text-blue-800 mb-3 flex items-center">
+                            <span class="mr-2">💡</span> 전략적 기회
+                        </h5>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• <b>소프트 파워 극대화:</b> 자본 투입 없이 한국 문화 전파</li>
+                            <li>• <b>창의적 시선:</b> 외부자의 시선으로 본 매력적인 재해석</li>
+                            <li>• <b>코리안 디아스포라:</b> 훌륭한 문화 교두보 역할 수행</li>
+                        </ul>
+                    </div>
+                    <div class="flex-1 p-6 bg-red-50 rounded-xl border border-red-100">
+                        <h5 class="font-bold text-red-800 mb-3 flex items-center">
+                            <span class="mr-2">⚠️</span> 구조적 리스크
+                        </h5>
+                        <ul class="text-sm text-gray-700 space-y-2">
+                            <li>• <b>수익 역외 유출:</b> IP 및 스트리밍 수익의 해외 귀속</li>
+                            <li>• <b>하청 기지화:</b> 국내 제작 기반의 장기적 종속 우려</li>
+                            <li>• <b>플랫폼 주도권:</b> 핵심 IP를 글로벌 거대 기업이 장악</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="text-center p-8 glass bg-gray-900 text-white rounded-2xl">
+                    <p class="text-lg font-medium leading-relaxed italic">
+                        "한국에서 만들었다면 스스로를 이렇게 풍자적으로 비꼬기는 힘들었을 것"
+                    </p>
+                    <p class="text-sm text-gray-400 mt-4">- 뉴욕 타임스(NYT) 분석 -</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 결론 및 전략적 제언 -->
+    <section id="conclusion" class="py-24 px-6 bg-blue-900 text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <h3 class="text-4xl font-black mb-12 text-center">대한민국 '문화 강국'을 위한 제언</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 border border-white/20 rounded-2xl hover:bg-white/10 transition cursor-default">
+                    <h6 class="text-xl font-bold mb-4 text-blue-300">01. 진정성 있는 고증</h6>
+                    <p class="text-sm leading-relaxed text-blue-100/80">
+                        단순한 이미지 차용이 아닌 철저한 연구와 존중이 글로벌 팬들의 '과몰입'을 이끌어냅니다. 우리 문화유산에 대한 깊이 있는 이해가 성공의 열쇠입니다.
+                    </p>
+                </div>
+                <div class="p-8 border border-white/20 rounded-2xl hover:bg-white/10 transition cursor-default">
+                    <h6 class="text-xl font-bold mb-4 text-blue-300">02. 플랫폼 관계 재정립</h6>
+                    <p class="text-sm leading-relaxed text-blue-100/80">
+                        단순 하청 구조에서 벗어나 IP 공동 소유, 수익 배분 모델 다각화 등 전략적 파트너로서의 위상을 확보해야 실질적 이익을 챙길 수 있습니다.
+                    </p>
+                </div>
+                <div class="p-8 border border-white/20 rounded-2xl hover:bg-white/10 transition cursor-default">
+                    <h6 class="text-xl font-bold mb-4 text-blue-300">03. 민관 합동 시스템</h6>
+                    <p class="text-sm leading-relaxed text-blue-100/80">
+                        콘텐츠의 인기가 실물 경제로 이어지도록 'K-콘텐츠 IP 가치증대 TF' 구축 등을 통해 선제적인 사업화 전략을 기획해야 합니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-20 text-center">
+                <p class="text-2xl font-light mb-8">가장 한국적인 것이 가장 세계적이다.</p>
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="px-8 py-3 bg-white text-blue-900 font-bold rounded-full hover:bg-blue-100 transition">처음으로 돌아가기</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-gray-800 text-center text-gray-500 text-sm">
+        <p>© 2024 K-POP Demon Hunters Deep Analysis Report. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Billboard Success Chart
+        const ctx = document.getElementById('billboardChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['공개 1주', '2주차', '3주차', '4주차(현재)'],
+                datasets: [{
+                    label: '글로벌 200 차트 순위 (역순)',
+                    data: [15, 5, 2, 1],
+                    borderColor: '#3b82f6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#fff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: { color: '#94a3b8' }
+                    }
+                },
+                scales: {
+                    y: {
+                        reverse: true,
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                        ticks: { color: '#94a3b8' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#94a3b8' }
+                    }
+                }
+            }
+        });
+
+        // Smooth navigation highlight
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section, header');
+            const navLinks = document.querySelectorAll('.nav-link');
+            let current = "";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-blue-400');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('text-blue-400');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
