@@ -43,6 +43,9 @@
             background-color: #0ea5e9;
             border-radius: 2px;
         }
+        .danger-gradient {
+            background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%);
+        }
     </style>
 </head>
 <body>
@@ -72,7 +75,6 @@
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
             <div>
                 <span class="inline-block px-4 py-1.5 bg-sky-100 text-sky-700 rounded-full text-sm font-bold mb-6">심층 분석 보고서</span>
-                <!-- 타이틀 크기 수정: 5xl/7xl -> 4xl/5xl -->
                 <h1 class="text-4xl md:text-5xl font-black text-slate-900 leading-tight mb-8">
                     생성형 AI 시대,<br><span class="text-sky-500">윤리적 가이드라인</span>
                 </h1>
@@ -92,7 +94,7 @@
                         </div>
                         <div class="bg-sky-500 p-6 rounded-3xl shadow-xl text-white card-hover">
                             <p class="text-3xl font-bold mb-2">14H</p>
-                            <p class="text-sm opacity-90 text-white font-medium">대통령 재현 학습 시간</p>
+                            <p class="text-sm opacity-90 text-white font-medium">오바마·박근혜 재현 학습 시간</p>
                         </div>
                     </div>
                     <div class="space-y-4">
@@ -194,26 +196,83 @@
     </section>
 
     <!-- 3. 딥페이크 섹션 -->
-    <section id="deepfake" class="section-padding bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="poppins text-sm font-bold text-sky-400 tracking-widest uppercase mb-4">Part 03. Trust & Truth</h2>
-            <h3 class="text-4xl md:text-5xl font-bold mb-16 italic">"보는 것이 믿는 것인가?"</h3>
+    <section id="deepfake" class="section-padding danger-gradient text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="poppins text-sm font-bold text-sky-400 tracking-widest uppercase mb-4">Part 03. Trust & Truth</h2>
+                <h3 class="text-4xl md:text-5xl font-bold mb-6 italic">"보는 것이 더 이상 진실이 아닌 시대"</h3>
+                <p class="text-slate-400 max-w-2xl mx-auto">딥페이크는 인식론적 위기를 초래하며 사회적 신뢰의 근간을 뒤흔들고 있습니다.</p>
+            </div>
             
-            <div class="max-w-4xl mx-auto">
-                <div class="mb-12 relative inline-block">
-                    <span class="text-7xl md:text-8xl font-black text-sky-500 opacity-20 poppins tracking-tighter">14 HOURS</span>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <p class="text-2xl font-bold">단 14시간의 연설 데이터</p>
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- 재현 실험 데이터 시각화 -->
+                <div class="relative">
+                    <div class="absolute -top-10 -left-10 w-40 h-40 bg-sky-500/20 rounded-full blur-3xl"></div>
+                    <div class="bg-slate-800/50 border border-slate-700 p-10 rounded-[3rem] backdrop-blur-sm relative z-10">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
+                                <i class="fa-solid fa-video"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl">스브스뉴스 재현 실험</h4>
+                                <p class="text-sm text-slate-400 italic">오바마·박근혜 전 대통령 사례</p>
+                            </div>
+                        </div>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-8">
+                            단 <span class="text-sky-400 font-bold underline">14시간의 연설 데이터</span>만으로 오바마와 박근혜 전 대통령의 미세한 근육 움직임까지 완벽히 재현했습니다. 이는 단순한 유희를 넘어 <span class="text-red-400 font-bold">인식론적 위기</span>를 초래합니다.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-700">
+                                <p class="text-sky-400 font-bold text-sm mb-1">사회적 신뢰 훼손</p>
+                                <p class="text-xs text-slate-400">진짜와 가짜의 경계 붕괴</p>
+                            </div>
+                            <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-700">
+                                <p class="text-sky-400 font-bold text-sm mb-1">사법 시스템 무력화</p>
+                                <p class="text-xs text-slate-400">영상 증거의 조작 가능성</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <p class="text-xl text-slate-300 leading-relaxed mb-12">
-                    스브스뉴스 실험 결과, 미세한 근육 움직임까지 재현해내는 딥페이크는 인식론적 위기를 초래합니다. "이제 동영상도 믿을 수 없는 세상"이라는 반응은 사회적 신뢰 자산의 훼손을 의미합니다.
-                </p>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="p-6 border border-slate-700 rounded-3xl bg-slate-800/50 hover:border-sky-500 transition cursor-default">보이스 피싱</div>
-                    <div class="p-6 border border-slate-700 rounded-3xl bg-slate-800/50 hover:border-sky-500 transition cursor-default">여론 선동</div>
-                    <div class="p-6 border border-slate-700 rounded-3xl bg-slate-800/50 hover:border-sky-500 transition cursor-default">성범죄 악용</div>
-                    <div class="p-6 border border-slate-700 rounded-3xl bg-slate-800/50 hover:border-sky-500 transition cursor-default">사법 무력화</div>
+
+                <!-- 신종 범죄 및 책임론 (글자색 수정됨) -->
+                <div class="space-y-8">
+                    <div class="bg-red-500/10 border border-red-500/20 p-8 rounded-3xl">
+                        <h4 class="text-red-400 font-bold text-xl mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            급증하는 딥페이크 위협
+                        </h4>
+                        <ul class="space-y-4 text-slate-300">
+                            <li class="flex gap-3">
+                                <span class="text-red-500 font-bold">01.</span>
+                                <div><span class="font-bold text-white">범죄 악용:</span> 목소리를 흉내 내는 보이스 피싱, 불법 합성물 제작</div>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-red-500 font-bold">02.</span>
+                                <div><span class="font-bold text-white">여론 선동:</span> 국가 안보를 위협하는 정교한 가짜 영상 유포</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- 개발자의 책임 카드 -->
+                        <div class="p-6 bg-slate-800 rounded-2xl border border-slate-700 card-hover">
+                            <h5 class="font-bold text-white mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-code text-sky-400"></i> 개발자의 책임
+                            </h5>
+                            <p class="text-sm text-white leading-relaxed opacity-100">
+                                기술의 악용 가능성을 충분히 고려하여, 탐지 전용 워터마크 삽입 및 방어 알고리즘을 선제적으로 도입해야 할 의무가 있습니다.
+                            </p>
+                        </div>
+                        <!-- 사용자의 책임 카드 -->
+                        <div class="p-6 bg-slate-800 rounded-2xl border border-slate-700 card-hover">
+                            <h5 class="font-bold text-white mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-user-check text-sky-400"></i> 사용자의 책임
+                            </h5>
+                            <p class="text-sm text-white leading-relaxed opacity-100">
+                                "기술은 죄가 없다, 사람이 문제다" - 타인의 인격을 존중하고 가짜 정보를 유포하지 않는 높은 수준의 디지털 윤리 의식이 필요합니다.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -236,7 +295,7 @@
                 <div class="text-center group">
                     <div class="text-4xl mb-6 text-sky-500 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-handshake-angle"></i></div>
                     <h4 class="text-xl font-bold mb-4">투명성 및 제어 (기업)</h4>
-                    <p class="text-slate-600 leading-relaxed">데이터 활용 목적을 명확히 고지하고 사용자가 제어권을 쉽게 행사하도록 직관적인 UI/UX를 설계해야 합니다.</p>
+                    <p class="text-slate-600 leading-relaxed">데이터 활용 목적을 명확히 고지하고 사용자가 제어권을 쉽게 행사하도록 직관적인 UI/UX를 설계 단계부터 반영해야 합니다.</p>
                 </div>
                 <div class="text-center group">
                     <div class="text-4xl mb-6 text-sky-500 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-lightbulb"></i></div>
